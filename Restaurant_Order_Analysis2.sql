@@ -7,9 +7,14 @@
 -- How many orders had more than 12 items?
 
 -- 1. View the order details table.
-
+ALTER TABLE order_details RENAME COLUMN `ï»¿order_details_id` TO `order_details_id`;
+SELECT * FROM order_details;
 -- 2. What is the data range of the table?
+SELECT *
+FROM order_details
+ORDER BY order_date;
 
+SELECT MIN(order_date), MAX(order_date) FROM order_details;
 -- 3. How many orders were made within this data range?
 
 -- 4. How many items were ordered within this data range?
