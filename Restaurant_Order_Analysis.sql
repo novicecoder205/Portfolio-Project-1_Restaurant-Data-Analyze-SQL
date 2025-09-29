@@ -20,3 +20,22 @@ ORDER BY price;
 -- 3b. Most expensive item.
 SELECT * FROM menu_items
 ORDER BY price DESC;
+
+-- 4. How many Italian Dishes are on the menu:
+SELECT COUNT(*) FROM menu_items
+WHERE category ='Italian';
+
+-- 5. What are the least/most expensive Italian Dises
+SELECT * FROM menu_items
+WHERE category ='Italian'
+ORDER BY price;
+
+SELECT * FROM menu_items
+WHERE category ='Italian'
+ORDER BY price DESC;
+
+-- 6. How many dishes in each category?
+SELECT category, COUNT(menu_item_id) as num_dishes
+FROM menu_items
+GROUP BY category
+
