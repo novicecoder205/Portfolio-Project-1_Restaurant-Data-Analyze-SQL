@@ -6,6 +6,7 @@ USE restaurant_data_db;
 -- How many dish are in each category.
 -- Average dish price within each category.
 -- 1, View the menu items table.
+-- -------------------------------------------------------------------------------------------------------------------------
 SELECT * FROM menu_items;
 ALTER TABLE menu_items RENAME COLUMN `ï»¿menu_item_id` TO `menu_item_id`;
 
@@ -37,5 +38,16 @@ ORDER BY price DESC;
 -- 6. How many dishes in each category?
 SELECT category, COUNT(menu_item_id) as num_dishes
 FROM menu_items
-GROUP BY category
+GROUP BY category;
 
+-- 7. Average dishes price within each category?
+SELECT category, AVG(price) AS avg_price
+FROM menu_items
+GROUP by category;
+-- -------------------------------------------------------------------------------------------------------------------------
+-- Objective 2: Explore the orders table.
+-- What is the data range of the table.
+-- How many orders were made within the data range.
+-- How many item were ordered within the data range?
+-- Which orders had the most no. of items?
+-- How many orders had more than 12 items?
