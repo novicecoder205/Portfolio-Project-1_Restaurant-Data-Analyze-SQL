@@ -44,10 +44,6 @@ GROUP BY category;
 SELECT category, AVG(price) AS avg_price
 FROM menu_items
 GROUP by category;
--- -------------------------------------------------------------------------------------------------------------------------
--- Objective 2: Explore the orders table.
--- What is the data range of the table.
--- How many orders were made within the data range.
--- How many item were ordered within the data range?
--- Which orders had the most no. of items?
--- How many orders had more than 12 items?
+
+
+
