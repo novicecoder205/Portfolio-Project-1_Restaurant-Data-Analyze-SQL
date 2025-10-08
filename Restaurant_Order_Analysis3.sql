@@ -12,4 +12,12 @@ SELECT * FROM order_details;
 SELECT * 
 FROM order_details od LEFT JOIN menu_items mi
      ON od.item_id =  mi.menu_item_id;
+
+-- 2.What were the least/most ordered item/what categories?
+SELECT item_name, category, COUNT(order_details_id) AS num_purchases
+FROM order_details od LEFT JOIN menu_items mi
+     ON od.item_id =  mi.menu_item_id
+GROUP BY item_name, category
+ORDER BY num_purchases DESC;
+     
      
