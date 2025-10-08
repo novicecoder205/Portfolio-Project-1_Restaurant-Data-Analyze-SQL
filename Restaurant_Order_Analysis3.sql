@@ -20,4 +20,21 @@ FROM order_details od LEFT JOIN menu_items mi
 GROUP BY item_name, category
 ORDER BY num_purchases DESC;
      
-     
+-- 3.What were top 5 orders that spent most money?
+SELECT order_id, SUM(price) AS total_spend
+FROM order_details od LEFT JOIN menu_items mi
+     ON od.item_id =  mi.menu_item_id
+GROUP BY order_id
+ORDER BY total_spend DESC
+LIMIT 5;
+
+-- 4.View details of highest spend order.
+SELECT category, COUNT(item_id) AS num_items
+FROM order_details od LEFT JOIN menu_items mi
+     ON od.item_id =  mi.menu_item_id
+WHERE order_id = 440
+GROUP BY category;
+
+-- 5.View details of top 5 highest spend order.
+
+
